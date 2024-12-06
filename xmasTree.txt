@@ -1,0 +1,109 @@
+@ r0 is the address of the screen
+@ which is 10000000 00000000
+@ we get this by shifting 0x80 over 8 places
+mov r0, 0x80
+mov r1, 0x08
+lsft r0, r0, r1
+
+@ counter for which screen line
+mov r1, 0x01
+
+@ used for shifting values to store 16 bits in register
+mov r3, 0x08
+
+@ setting up r4
+mov r5, 0xfe
+mov r6, 0x7f
+lsft r4, r5, r3
+add r4, r4, r6
+
+@ setting up r5
+mov r6, 0xfe
+mov r7, 0xbf
+lsft r5, r6, r3
+add r5, r5, r7
+
+@ setting up r6
+mov r7, 0xfc
+mov r8, 0x3f
+lsft r6, r7, r3
+add r6, r6, r8
+
+@ setting up r7
+mov r8, 0xf9
+mov r9, 0x9f
+lsft r7, r8, r3
+add r7, r7, r9
+
+@ setting up r8
+mov r9, 0xf0
+mov r10, 0x0f
+lsft r8, r9, r3
+add r8, r8, r10
+
+@ setting up r9
+mov r10, 0xe4
+mov r11, 0x07
+lsft r9, r10, r3
+add r9, r9, r11
+
+@ setting up r10
+mov r11, 0xe0
+mov r12, 0x27
+lsft r10, r11, r3
+add r10, r10, r12
+
+@ setting up r11
+mov r12, 0xc0
+mov r13, 0x03
+lsft r11, r12, r3
+add r11, r11, r13
+
+@ setting up r12
+mov r13, 0x82
+mov r14, 0x01
+lsft r12, r13, r3
+add r12, r12, r14
+
+@ setting up r13
+mov r14, 0x80
+mov r15, 0x01
+lsft r13, r14, r3
+add r13, r13, r15
+
+@ setting up r14
+mov r15, 0xff
+lsft r14, r15, r3
+add r14, r14, r15
+
+str r15, [r0]
+add r0, r0, r1
+str r4, [r0]
+add r0, r0, r1
+str r5, [r0]
+add r0, r0, r1
+str r4, [r0]
+add r0, r0, r1
+str r6, [r0]
+add r0, r0, r1
+str r6, [r0]
+add r0, r0, r1
+str r7, [r0]
+add r0, r0, r1
+str r8, [r0]
+add r0, r0, r1
+str r8, [r0]
+add r0, r0, r1
+str r9, [r0]
+add r0, r0, r1
+str r10, [r0]
+add r0, r0, r1
+str r11, [r0]
+add r0, r0, r1
+str r12, [r0]
+add r0, r0, r1
+str r13, [r0]
+add r0, r0, r1
+str r4, [r0]
+add r0, r0, r1
+str r4, [r0]
